@@ -1,2 +1,1 @@
-# angular_intercept
-Curso da Alura
+# angular_2_curso
