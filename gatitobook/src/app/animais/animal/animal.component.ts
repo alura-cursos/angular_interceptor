@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-const CLOUD = 'http://localhost:3000';
+const API = 'http://localhost:3000';
 
 @Component({
   selector: 'app-animal',
@@ -15,7 +15,7 @@ export class AnimalComponent implements OnInit {
     if (url.startsWith('data')) {
       this.urlOriginal = url;
     } else {
-      this.urlOriginal = CLOUD + url;
+      this.urlOriginal = API + url;
     }
   }
 
