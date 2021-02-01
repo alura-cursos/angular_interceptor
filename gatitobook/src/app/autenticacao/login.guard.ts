@@ -14,9 +14,8 @@ import { UsuarioService } from './usuario/usuario.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AutenticacaoGuard implements CanLoad {
+export class LoginGuard implements CanLoad {
   constructor(private usuarioService: UsuarioService, private router: Router) {}
-
   canLoad(
     route: Route,
     segments: UrlSegment[]
@@ -25,8 +24,10 @@ export class AutenticacaoGuard implements CanLoad {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (!this.usuarioService.estaLogado()) {
-      this.router.navigate(['']);
+    if (this.usuarioService.estaLogado()) {
+      this.router.navigate([
+        'animais'
+      ]);
       return false;
     }
 
