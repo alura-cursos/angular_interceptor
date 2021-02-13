@@ -15,6 +15,10 @@ import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.componen
     GradeFotosAnimaisComponent,
     DetalheAnimalComponent,
   ],
-  imports: [CommonModule, AnimaisRoutingModule, CartaoModule],
+  imports: [
+    CommonModule,
+    AnimaisRoutingModule,
+    CartaoModule,
+  ],
 })
 export class AnimaisModule {}
