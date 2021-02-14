@@ -26,8 +26,28 @@ export class DetalheAnimalComponent implements OnInit {
       () => {},
       (err) => {
         console.log(err);
-        this.router.navigate(['not-found']);
       }
     );
+  }
+
+  excluir(): void {
+    this.animaisService.excluiAnimal(this.animalId).subscribe(
+      () => {
+        this.router.navigate(
+          ['/animais/']
+        );
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
+  curtir(animal: Animal): void {
+    this.animaisService.curtir(animal.id).subscribe((curtida) => {
+      if (curtida) {
+        this.animal$ = this.animaisService.buscaPorId(animal.id);
+      }
+    });
   }
 }
