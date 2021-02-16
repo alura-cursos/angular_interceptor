@@ -10,6 +10,7 @@ import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.componen
 import { ComentariosComponent } from './detalhe-animal/comentarios/comentarios.component';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     DetalheAnimalComponent,
     ComentariosComponent,
   ],
-  imports: [
-    CommonModule,
-    AnimaisRoutingModule,
-    CartaoModule,
-    MensagemModule,
-    ReactiveFormsModule,
-  ],
+  imports: [CommonModule, AnimaisRoutingModule, CartaoModule, SharedModule],
 })
 export class AnimaisModule {}
